@@ -1,0 +1,12 @@
+include = ["**/*.toml"]
+
+exclude = ["Cargo.lock", "target"]
+
+# apply the schema, it will happen unexpected errors in all toml files having expressions like [topic].
+# That's why??????
+# [schema]
+# path = "taplo://taplo.toml"
+
+[formatting]
+column_width = 88
+indent_string = "    "
