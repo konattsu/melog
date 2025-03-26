@@ -1,0 +1,21 @@
+# https://qiita.com/gon0821/items/77369def082745d19c38
+
+services:
+  rust_dev:
+    build: .
+    container_name: rust_dev_container
+    working_dir: /app
+    volumes:
+      - .:/app
+      - rust_dev_target:/app/target
+    tty: true
+    ports:
+      - "8080:8080"
+    environment:
+      - USER: natsu
+      - CARGO_BUILD_TARGET_DIR: /app/target
+    # command: ["cargo", "run"]
+
+volumes:
+  rust_dev_target:
+    external: true
