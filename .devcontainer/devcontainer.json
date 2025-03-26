@@ -5,9 +5,6 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	// "image": "mcr.microsoft.com/devcontainers/rust:1-1-bullseye",
 
-	"features": {
-	},
-
 	"service": "rust_dev",
 	"workspaceFolder": "/workspaces",
 	"dockerComposeFile": "./docker-compose.yml",
@@ -28,10 +25,12 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "git config --global user.signingkey /home/vscode/.ssh/gh_wsl_commit.pub"
+	// NOTE: 動作安定しないのでシェルスクリプトを手動で実行するように変更
+	//     : 具体的には,gitconfigの項目がsigningkeyのみになる(厳密にはcredential.helperというのがdevcontainerの自動生成で追加される)
+	// "postCreateCommand": "git config --global user.signingkey /home/vscode/.ssh/gh_wsl_commit.pub",
+	"postCreateCommand": "chmod 755 ./set_cfg_signing_key.sh"
 
 	// Configure tool-specific properties.
-	// "customizations": {},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
