@@ -13,9 +13,6 @@ twilight-http = "0.16"
 twilight-model = "0.16"
 twilight-util = "0.16"
 
-[dev-dependencies]
-dotenvy = "0.15.7"
-
 [profile.test]
 debug = 2
 
