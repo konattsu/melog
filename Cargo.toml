@@ -5,7 +5,16 @@ edition = "2024"
 
 
 [dependencies]
+dotenvy = "0.15.7"
+thiserror = "2"
+tokio = { version = "1.44", features = ["macros", "rt-multi-thread"] }
+twilight-gateway = "0.16"
+twilight-http = "0.16"
+twilight-model = "0.16"
+twilight-util = "0.16"
 
+[dev-dependencies]
+dotenvy = "0.15.7"
 
 [profile.test]
 debug = 2
